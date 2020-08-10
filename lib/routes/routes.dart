@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:startup/ui/page/TapboxA.dart';
 import 'package:startup/ui/page/detail.dart';
 import 'package:startup/ui/page/favoriteList.dart';
 import 'package:startup/ui/page/home.dart';
 
 //配置路由规则
 final routes = {
-  '/': (context) => HomePage(),
+  '/': (context) => TapboxA(),
   '/favorite': (context, {arguments}) =>
       FavoriteListPage(favoriteList: arguments),
   '/detail': (context, {arguments}) => DetailPage(detail: arguments)
