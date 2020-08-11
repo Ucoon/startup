@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:startup/ui/page/state/parentWidget.dart';
-import 'package:startup/ui/page/state/parentWidgetC.dart';
-import 'package:startup/ui/page/state/tapboxA.dart';
-import 'package:startup/ui/page/route/detail.dart';
-import 'package:startup/ui/page/route/favoriteList.dart';
-import 'package:startup/ui/page/route/home.dart';
+import 'package:startup/ui/provider/pages/login.dart';
+import 'package:startup/ui/state/parentWidgetC.dart';
+import 'package:startup/ui/route/detail.dart';
+import 'package:startup/ui/route/favoriteList.dart';
 
 //配置路由规则
 final routes = {
-  '/': (context) => ParentWidgetC(),
+  '/': (context) => Login(),
   '/favorite': (context, {arguments}) =>
       FavoriteListPage(favoriteList: arguments),
   '/detail': (context, {arguments}) => DetailPage(detail: arguments)
