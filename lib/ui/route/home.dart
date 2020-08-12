@@ -24,7 +24,7 @@ class HomePageState extends State<HomePage> {
   }
 
   void _pushSaved() {
-    Navigator.pushNamed(context, '/favorite', arguments: _saved);
+    Navigator.pushNamed(context, '/route/favorite', arguments: _saved);
   }
 
   Widget _buildSuggestions() {

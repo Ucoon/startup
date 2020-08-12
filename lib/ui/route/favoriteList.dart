@@ -20,7 +20,7 @@ class _FavoriteListPageState extends State<FavoriteListPage> {
           wordPair.asPascalCase,
           style: _biggerFont,
         ),
-        onTap: () => Navigator.pushNamed(context, '/detail',
+        onTap: () => Navigator.pushNamed(context, '/route/detail',
             arguments: wordPair.asPascalCase),
       );
     });

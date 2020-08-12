@@ -50,7 +50,8 @@ class Login extends StatelessWidget {
                 child: Text('登录'),
                 onPressed: () {
                   if ((_formKey.currentState as FormState).validate()) {
-                    print('登录成功');
+                    Navigator.pushReplacementNamed(
+                        context, '/provider/cartlogo');
                   }
                 },
               )

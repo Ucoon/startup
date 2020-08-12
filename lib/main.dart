@@ -1,18 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:startup/routes/routes.dart';
+import 'package:startup/ui/provider/models/cart.dart';
+import 'package:startup/ui/provider/models/catalog.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Ucoon',
-      initialRoute: '/',
-      //路由钩子
-      onGenerateRoute: onGenerateRoute,
-      //路由守卫
-      navigatorObservers: <NavigatorObserver>[RouteObserver()],
+    return MultiProvider(
+      providers: [
+        Provider(create: (context) => CatalogModel()),
+        ChangeNotifierProxyProvider<CatalogModel, CartModel>(
+            create: (context) => CartModel(),
+            update: (context, catalog, cart) {
+              cart.catalog = catalog;
+              return cart;
+            }),
+      ],
+      child: MaterialApp(
+        title: 'Ucoon',
+        initialRoute: '/',
+        //路由钩子
+        onGenerateRoute: onGenerateRoute,
+        //路由守卫
+        navigatorObservers: <NavigatorObserver>[RouteObserver()],
+      ),
     );
   }
 }
