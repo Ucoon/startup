@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup/ui/dio/dio.dart';
 
 class Login extends StatelessWidget {
   final GlobalKey _formKey = GlobalKey<FormState>();
@@ -49,10 +50,11 @@ class Login extends StatelessWidget {
                 color: Colors.yellow,
                 child: Text('登录'),
                 onPressed: () {
-                  if ((_formKey.currentState as FormState).validate()) {
-                    Navigator.pushReplacementNamed(
-                        context, '/provider/cartlogo');
-                  }
+                  // if ((_formKey.currentState as FormState).validate()) {
+                  //   Navigator.pushReplacementNamed(
+                  //       context, '/provider/cartlogo');
+                  // }
+                  getHttp();
                 },
               )
             ],

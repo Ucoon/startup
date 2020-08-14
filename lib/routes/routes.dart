@@ -4,7 +4,7 @@ import 'package:startup/ui/provider/pages/cartlog.dart';
 import 'package:startup/ui/provider/pages/login.dart';
 import 'package:startup/ui/state/parentWidgetC.dart';
 import 'package:startup/ui/route/detail.dart';
-import 'package:startup/ui/route/favoriteList.dart';
+import 'package:startup/ui/route/favorite_list.dart';
 
 //配置路由规则
 final routes = {
