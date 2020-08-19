@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup/generated/l10n.dart';
 import 'package:startup/ui/dio/dio.dart';
 
 class Login extends StatelessWidget {
@@ -23,7 +24,9 @@ class Login extends StatelessWidget {
                   children: [
                     TextFormField(
                       validator: (value) {
-                        return value.trim().length > 0 ? null : '用户名不能为空';
+                        return value.trim().length > 0
+                            ? null
+                            : S.of(context).loginAccountHint;
                       },
                       decoration: InputDecoration(
                         icon: Icon(Icons.person),

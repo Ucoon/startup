@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:startup/generated/l10n.dart';
 import 'package:startup/routes/routes.dart';
 import 'package:startup/ui/provider/models/cart.dart';
 import 'package:startup/ui/provider/models/catalog.dart';
@@ -26,6 +28,13 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: onGenerateRoute,
         //路由守卫
         navigatorObservers: <NavigatorObserver>[RouteObserver()],
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
       ),
     );
   }
