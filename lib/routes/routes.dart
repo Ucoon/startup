@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:startup/ui/imagepicker/image_picker.dart';
+import 'package:startup/ui/plugin/battery.dart';
 import 'package:startup/ui/provider/pages/cart.dart';
 import 'package:startup/ui/provider/pages/cartlog.dart';
 import 'package:startup/ui/provider/pages/login.dart';
@@ -8,7 +10,7 @@ import 'package:startup/ui/route/favorite_list.dart';
 
 //配置路由规则
 final routes = {
-  '/': (context) => Login(),
+  '/': (context) => BatteryPage(),
   '/route/favorite': (context, {arguments}) =>
       FavoriteListPage(favoriteList: arguments),
   '/route/detail': (context, {arguments}) => DetailPage(detail: arguments),
