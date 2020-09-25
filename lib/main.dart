@@ -1,3 +1,4 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -23,11 +24,15 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Ucoon',
+        builder: BotToastInit(),
         initialRoute: '/',
         //路由钩子
         onGenerateRoute: onGenerateRoute,
         //路由守卫
-        navigatorObservers: <NavigatorObserver>[RouteObserver()],
+        navigatorObservers: <NavigatorObserver>[
+          BotToastNavigatorObserver(),
+          RouteObserver()
+        ],
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,

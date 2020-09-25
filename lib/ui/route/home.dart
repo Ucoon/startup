@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:startup/ui/widget/meeting_toast_view.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -55,8 +56,10 @@ class HomePageState extends State<HomePage> {
       onTap: () {
         setState(() {
           if (alreadySaved) {
+            MeetingToastViewHelper.show(context, "取消收藏");
             _saved.remove(wordPair);
           } else {
+            MeetingToastViewHelper.show(context, "已收藏");
             _saved.add(wordPair);
           }
         });
